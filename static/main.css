@@ -144,7 +144,9 @@ h3 {
     font-size: 26px;
 }
 
-.notifications {
+.error {
+    animation: fadeOut 2s forwards;
+    animation-delay: 3s;
     /* display:none; */
     margin: 2em;
     padding: 1em;
@@ -155,8 +157,6 @@ h3 {
     border-image-slice: 1;
     border-radius: 1em;
     color: white;
-}
-.error {
     background-color: rgba(245, 31, 120, 0.609);
     border-color: rgba(255, 0, 0, 0.315);
 }
@@ -177,4 +177,24 @@ footer {
     position: fixed;
     bottom: 0%;
     left: 45%;
+}
+
+@-webkit-keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
 }
