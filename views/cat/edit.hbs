@@ -1,0 +1,12 @@
+<h1>Edit information about your cat</h1>
+
+<form action="/cat/edit/{{catData._id}}" method="POST">
+    <label for="name">Name:
+        <input type="text" name="name" value="{{catData.name}}"></label>
+    <label for="description">Description:
+        <textarea name="description" cols="30" rows="3">{{catData.description}}</textarea>
+    </label>
+    <label for="imageUrl">Image URL:
+        <input type="text" name="imageUrl" value="{{catData.imageUrl}}"></label>
+    <input type="submit" value="Give us this cat">
+</form>

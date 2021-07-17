@@ -1,0 +1,22 @@
+<main>
+    <div>
+        <section>
+            <h1>Cat name: {{cat.name}}</h1>
+            <div>
+                <img src="{{cat.imageUrl}}" />
+            </div>
+        </section>
+
+        <section>
+            <h3>Cat Description</h3>
+            <p>{{cat.description}}</p>
+
+            {{#if cat.isAuthor}}
+            <div class="buttons">
+                <a href="/cat/delete/{{cat._id}}">Delete</a>
+                <a href="/cat/edit/{{cat._id}}">Edit</a>
+            </div>
+            {{/if}}
+        </section>
+    </div>
+</main>
