@@ -1,8 +1,8 @@
 const Cat = require('../models/Cat')
 
-async function getAllCats() {
-
-    const cats = await Cat.find({}).lean();
+async function getAllCats(query) {
+    const name = { $regex: query.search, $options: 'i' };
+    const cats = await Cat.find({name}).lean();
 
     return cats;
 }
