@@ -7,7 +7,7 @@ module.exports = (app) => {
     app.use('/auth', authController);
     app.use('/cat', catController);
     
-    app.use((req, res, next) => {
+    app.use((req, res) => {
         res.status(404).render('404');
     });
 }
