@@ -124,6 +124,25 @@ div a:active{
     background-color: darkolivegreen;
 }
 
+.desc-card {
+    display: inline-block;
+}
+
+h3 {
+    margin: auto;
+}
+
+.description {
+    position: relative;
+    padding: 8px;
+    display: inline-block;
+    background-color: rgb(243, 243, 243);
+}
+
+.cat-name{
+    color: rgb(124, 25, 0);
+    font-size: 26px;
+}
 
 .notifications {
     /* display:none; */

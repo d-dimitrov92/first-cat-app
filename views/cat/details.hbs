@@ -1,7 +1,7 @@
 <main>
-    <div>
+    <div class="desc-card">
         <section>
-            <h1>Cat name: {{cat.name}}</h1>
+            <h1>Cat name: <span class="cat-name">{{cat.name}}</span></h1>
             <div>
                 <img src="{{cat.imageUrl}}" />
             </div>
@@ -9,7 +9,7 @@
 
         <section>
             <h3>Cat Description</h3>
-            <p>{{cat.description}}</p>
+            <p class="description">{{cat.description}}</p>
 
             {{#if cat.isAuthor}}
             <div class="buttons">
