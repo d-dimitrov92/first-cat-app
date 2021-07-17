@@ -35,11 +35,16 @@ nav span {
 
 .main-card {
     display: inline-block;
-    /* flex-basis: auto; */
-    justify-content: space-between;
+    background-color: rgb(233, 233, 233);
     border: black solid 2px;
-    margin: 4px;
-    padding: 4px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 1.5em 2px black;
+    margin: 12px;
+    padding: 12px;
+}
+.main-card:hover{
+    border: rgb(88, 0, 0) solid 2px;
+    box-shadow: 2px 2px 1.5em 2px rgb(88, 0, 0);
 }
 .cat-img {
     position: relative;
@@ -66,13 +71,91 @@ main {
     display: block;
 }
 
-form {
-    
+form input, form textarea{
+    font-size: 22px;
+    text-align: left;
+}
+
+form label {
+    font-size: 22px;
+    display: block;
+    margin: 32px;
+    font-weight: bold;
+}
+form input.submit {
+    color:white;
+    background-color: darkolivegreen;
+    font-size: 24px;
+    margin: 5px;
+    padding: 4px 8px;
+    text-decoration: none;
+    border: black solid 2px;
+    border-radius: 8px;
+}
+form input.submit:hover {
+    background-color: darkseagreen;
+    color: black;
+}
+form input.submit:active {
+    background-color: darkolivegreen;
+    color:white;
+}
+p {
+    font-size: 20px;
+}
+
+div a {
+    display: inline;
+    color:white;
+    background-color: darkolivegreen;
+    font-size: 24px;
+    margin: 5px;
+    padding: 4px 8px;
+    text-decoration: none;
+    border: black solid 2px;
+    border-radius: 8px;
+}
+div a:hover{
+    color: black;
+    background-color: darkseagreen;
+}
+div a:active{
+    color: white;
+    background-color: darkolivegreen;
+}
+
+
+.notifications {
+    /* display:none; */
+    margin: 2em;
+    padding: 1em;
+    position: absolute;
+    right: 0;
+    width: 20em;
+    border: 2px solid;
+    border-image-slice: 1;
+    border-radius: 1em;
+    color: white;
+}
+.error {
+    background-color: rgba(245, 31, 120, 0.609);
+    border-color: rgba(255, 0, 0, 0.315);
+}
+
+.delete {
+    background-color: darkred;
+}
+.delete:hover {
+    background-color: rgb(251, 106, 106);
+    color: black;
+}
+.delete:active {
+    background-color: darkred;
 }
 
 footer {
     display: block;
     position: fixed;
     bottom: 0%;
-    text-align: center;
+    left: 45%;
 }
