@@ -1,10 +1,10 @@
 <h1>Give Us a Cat</h1>
 <p>fill the form, please</p>
-<form action="/cat/create" method="POST">
+<form class="form" action="/cat/create" method="POST">
     <label for="name">Name:
         <input autofocus type="text" name="name" value="{{catData.name}}"></label>
     <label for="description">Description:
-        <textarea name="description" cols="30" rows="3">{{catData.description}}</textarea>
+        <textarea name="description" cols="19" rows="1">{{catData.description}}</textarea>
     </label>
     <label for="imageUrl">Image URL:
         <input type="text" name="imageUrl" value="{{catData.imageUrl}}"></label>

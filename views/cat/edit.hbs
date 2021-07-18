@@ -1,12 +1,14 @@
 <h1>Edit information about your cat</h1>
 
-<form action="/cat/edit/{{catData._id}}" method="POST">
+<form class="form" action="/cat/edit/{{catData._id}}" method="POST">
     <label for="name">Name:
         <input autofocus type="text" name="name" value="{{catData.name}}"></label>
     <label for="description">Description:
-        <textarea name="description" cols="30" rows="3">{{catData.description}}</textarea>
+        <textarea name="description" cols="19" rows="1">{{catData.description}}</textarea>
     </label>
     <label for="imageUrl">Image URL:
         <input type="text" name="imageUrl" value="{{catData.imageUrl}}"></label>
-    <input class="submit" type="submit" value="Give us this cat">
+
+    <div style="display: inline-block;"> <a href="/cat/details/{{catData._id}}">Back</a></div>
+    <input class="submit" type="submit" value="Update">
 </form>
