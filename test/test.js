@@ -1,6 +1,5 @@
 const express = require('express');
-const router = require('express').Router();
-const request = require('supertest')
+const request = require('supertest');
 
 
 describe('app.all()', () => {
