@@ -5,6 +5,8 @@ router.get('/', async (req, res) => {
 
     const ctx = {
         search: req.query.search,
+        page: req.query.page,
+        limit: req.query.limit,
         cats
     }
     
@@ -14,6 +16,12 @@ router.get('/', async (req, res) => {
 router.get('/about', async (req, res) => {
 
     res.render('about');
+});
+
+router.get('/profile', async (req, res) => {
+    console.log(req.user);
+    const userData = req.user;
+    res.render('auth/profile', {userData});
 });
 
 

@@ -12,6 +12,7 @@ router.post(
     body('username')
         .isLength({ min: 3 }).withMessage('Username must be atleast 3 chars long').bail()
         .matches(/[a-zA-Z0-9]/).withMessage('Username must contains only english letters and numbers'),
+    body('email', 'Invalid email').isEmail(),
     body('password')
         .isLength({ min: 3 }).withMessage('Password must be at least 3 chars long').bail()
         .matches(/[a-zA-Z0-9]/).withMessage('Password must contains only english letters and numbers'),
@@ -29,7 +30,7 @@ router.post(
                 throw new Error(Object.values(errors).map(e => e.msg).join('\n'));
             }
 
-            await req.auth.register(req.body.username, req.body.password);
+            await req.auth.register(req.body.username, req.body.email, req.body.password);
 
             res.redirect('/');
         } catch (err) {
@@ -37,7 +38,8 @@ router.post(
             const ctx = {
                 errors: err.message.split('\n'),
                 userData: {
-                    username: req.body.username
+                    username: req.body.username,
+                    email: req.body.email
                 }
             }
             res.render('auth/register', ctx);
@@ -57,7 +59,7 @@ router.post('/login', isGuest(), async (req, res) => {
     } catch (err) {
         console.log(err);
         let errors = err.message;
-        if(err.type == 'credential'){
+        if (err.type == 'credential') {
             errors = ['Incorrect username or password'];
         }
         const ctx = {

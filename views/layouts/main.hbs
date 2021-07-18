@@ -12,7 +12,7 @@
 <body>
     <nav>
         {{#if user}}
-        <span>Hello, {{user.username}}!</span><br>
+        <span>Hello, <a class="profile-btn" href="/profile">{{user.username}}</a>!</span>
         <a href="/">Home</a>
         <a href="/about">About</a>
         <a class="special" href="/cat/create">Give Us a cat</a>

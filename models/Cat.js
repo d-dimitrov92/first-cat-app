@@ -5,6 +5,7 @@ const schema = new Schema({
     name: { type: String, required: [true, 'Please enter name of the cat'] },
     description: { type: String, required: [true, 'Write description'], minLength: [10, 'Description must be minimum 10 chars!'] },
     imageUrl: { type: String, required: [true, 'Add image please'] },
+    createdAt: { type: Date, default: Date.now },
     author: { type: Schema.Types.ObjectId, ref: 'User' }
 });
 

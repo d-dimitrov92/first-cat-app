@@ -45,7 +45,6 @@ router.get('/details/:id', async (req, res) => {
 
         cat.hasUser = Boolean(req.user);
         cat.isAuthor = req.user && req.user._id == cat.author;
-
         res.render('cat/details', { cat });
     } catch (err) {
         console.log(err.message);

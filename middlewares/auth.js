@@ -7,8 +7,8 @@ const userService = require('../services/user');
 module.exports = () => (req, res, next) => {
     if (parseToken(req, res)) {
         req.auth = {
-            async register(username, password) {
-                const token = await register(username, password);
+            async register(username, email, password) {
+                const token = await register(username, email, password);
                 res.cookie(COOKIE_NAME, token);
             },
             async login(username, password) {
@@ -24,15 +24,19 @@ module.exports = () => (req, res, next) => {
     }
 };
 
-async function register(username, password) {
-    const existing = await userService.getUserByUsername(username);
+async function register(username, email, password) {
+    const existingUser = await userService.getUserByUsername(username);
+    const existingEmail = await userService.getUserByEmail(email);
 
-    if (existing) {
+    if (existingUser) {
         throw new Error('Username is taken');
+    }
+    if (existingEmail) {
+        throw new Error('Email is taken');
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    const user = await userService.createUser(username, hashedPassword);
+    const user = await userService.createUser(username, email, hashedPassword);
 
     return generateToken(user);
 }
@@ -61,7 +65,8 @@ async function login(username, password) {
 function generateToken(userData) {
     return jwt.sign({
         _id: userData._id,
-        username: userData.username
+        username: userData.username,
+        email: userData.email
     }, TOKEN_SECRET);
 }
 

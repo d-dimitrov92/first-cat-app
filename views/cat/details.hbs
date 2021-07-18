@@ -3,13 +3,14 @@
         <section>
             <h1>Cat name: <span class="cat-name">{{cat.name}}</span></h1>
             <div>
-                <img src="{{cat.imageUrl}}" />
+                <img src="{{cat.imageUrl}}" alt="cat picture here"/>
             </div>
         </section>
 
         <section>
             <h3>Cat Description</h3>
             <p class="description">{{cat.description}}</p>
+            <h5>Date: {{cat.createdAt}}</h5>
 
             {{#if cat.isAuthor}}
             <div class="buttons">

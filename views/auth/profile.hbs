@@ -1,0 +1,21 @@
+<section id="userDetails">
+    <div class="profile"><img src="../static/profile.png" alt="default user" width="200" height="200">
+        <h3>User Info:</h3>
+        <div class="flex">
+            <p>Username: </p>
+            <p>{{userData.username}}</p>
+        </div>
+        <div class="flex">
+            <p>Email: </p>
+            <p>{{userData.email}}</p>
+        </div>
+        <div class="flex">
+            <p>Given cats: </p>
+            <p>
+                {{#each givenCats}}
+                {{> givenCat}}
+                {{/each}}
+            </p>
+        </div>
+    </div>
+</section>

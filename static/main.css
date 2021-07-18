@@ -3,6 +3,11 @@
     text-align: center;
 }
 
+.profile-btn {
+    border: none;
+    
+}
+
 nav {
     display: block;
     margin: auto;
@@ -172,10 +177,40 @@ h3 {
     background-color: darkred;
 }
 
+
+select {
+    font-size: 24px;
+}
+
+.prev, .next, .goBtn {
+    display: inline-block;
+    text-decoration: none;
+    margin: 8px;
+    margin-top: 24px;
+    padding: 8px;
+    border: black 1px solid;
+    border-radius: 8px;
+    font-size: 24px;
+    color: white;
+    background-color: rgb(65, 24, 0);
+}
+
+.prev:hover, .next:hover, .goBtn:hover {
+    color: rgb(65, 24, 0);
+    background-color: rgb(255, 113, 113);
+}
+
+.prev:active, .next:active, .goBtn:active {
+    color: white;
+    background-color: rgb(65, 24, 0);
+}
+.page {
+    font-size: 24px;
+}
+
 footer {
     display: block;
-    position: fixed;
-    bottom: 0%;
+    margin-top: 24px;
     left: 45%;
 }
 
