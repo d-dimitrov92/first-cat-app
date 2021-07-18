@@ -1,4 +1,5 @@
-const Cat = require('../models/Cat')
+const Cat = require('../models/Cat');
+const User = require('../models/User');
 
 async function getAllCats(query) {
     try {
@@ -24,7 +25,7 @@ async function getAllCats(query) {
         } else {
             pageOptions.limit = 3
         }
-        
+
         //index of first rendered cat
         const startIndex = (pageOptions.page - 1) * pageOptions.limit;
         //index of last rendered cat
@@ -51,7 +52,7 @@ async function getAllCats(query) {
             .sort({ createdAt: 'desc' })
             .lean();
 
-        // preventing display next button when use search
+        // preventing display next button when use search **bug**
         if (cats.catsList.length < pageOptions.limit) {
             cats.next = {};
         }
@@ -69,21 +70,23 @@ async function getCatById(id) {
     } catch (err) {
         console.log(err);
     }
-
 }
 
-async function createCat(catData) {
+async function createCat(catData, id) {
     try {
         const pattern = new RegExp(`^${catData.name}$`, 'i');
         const existing = await Cat.findOne({ name: { $regex: pattern } });
+        const user = await User.findById(id);
 
         if (existing) {
             throw new Error('A cat with this name already exists.');
         }
 
         const cat = new Cat(catData);
+        user.givenCats.push(cat);
 
         await cat.save();
+        await user.save();
 
         return cat;
     } catch (err) {

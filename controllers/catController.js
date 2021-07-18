@@ -16,7 +16,8 @@ router.post('/create', isUser(), async (req, res) => {
             author: req.user._id
         }
 
-        const cat = await req.storage.createCat(catData);
+        const cat = await req.storage.createCat(catData, req.user._id);
+        
         res.redirect('/');
     } catch (err) {
         let errors;

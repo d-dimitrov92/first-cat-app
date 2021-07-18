@@ -3,6 +3,14 @@
     text-align: center;
 }
 
+nav {
+    background-color: lightgray;
+}
+
+body {
+    margin: 0;
+}
+
 .profile-btn {
     border: none;
     
@@ -33,7 +41,7 @@ nav a:active{
 }
 nav span {
     display: block;
-    margin: 5px;
+    margin: 0;
     padding: 4px;
     font-size: 24px;
 } 
@@ -208,8 +216,15 @@ select {
     font-size: 24px;
 }
 
+.flex p {
+    display: inline-block;
+}
+
 footer {
+    background-color: lightgray;
     display: block;
+    padding: 12px;
+    margin: 0;
     margin-top: 24px;
     left: 45%;
 }

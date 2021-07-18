@@ -2,8 +2,11 @@
 <script src="/static/app.js" type="module"></script> --}}
 
 <form action="/" method="GET">
-  <input type="text" class="search" name="search" placeholder="Search..." value={{search}}>
+  <input autofocus type="text" class="search" name="search" placeholder="Search..." value={{search}}>
   <input class="submit" type="submit" value="Search"><br>
+  <h1>
+    <p>Theese are some of the cats that live here sorted by date (descending)</p>
+  </h1>
   {{#if cats.prev.page}}
   <a class="prev" href="/?search={{search}}&page={{cats.prev.page}}&limit={{limit}}">Prev</a>
   {{/if}}
@@ -12,7 +15,8 @@
   <a class="next" href="/?search={{search}}&page={{cats.next.page}}&limit={{limit}}">Next</a>
   {{/if}}
   <div class="catsOnPage">
-    <span style="font-size: 18px;">Cats on page: </span><select name="limit">
+    <span style="font-size: 18px;">Cats on page: </span>
+    <select name="limit">
       <option value="3">3</option>
       <option value="6">6</option>
       <option value="9">9</option>
@@ -20,8 +24,7 @@
     <input class="goBtn" type="submit" value="GO">
   </div>
 </form>
-<h1>Home</h1>
-<p>Theese are some of the cats that live here sorted by date (descending)</p>
+
 
 {{#each cats.catsList}}
 {{> cat}}

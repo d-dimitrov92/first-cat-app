@@ -30,7 +30,7 @@ router.post(
                 throw new Error(Object.values(errors).map(e => e.msg).join('\n'));
             }
 
-            await req.auth.register(req.body.username, req.body.email, req.body.password);
+            await req.auth.register(req.body.username, req.body.email, req.body.password, req.body.userImg);
 
             res.redirect('/');
         } catch (err) {
@@ -39,7 +39,8 @@ router.post(
                 errors: err.message.split('\n'),
                 userData: {
                     username: req.body.username,
-                    email: req.body.email
+                    email: req.body.email,
+                    userImg: req.body.userImg
                 }
             }
             res.render('auth/register', ctx);

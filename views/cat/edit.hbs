@@ -2,7 +2,7 @@
 
 <form action="/cat/edit/{{catData._id}}" method="POST">
     <label for="name">Name:
-        <input type="text" name="name" value="{{catData.name}}"></label>
+        <input autofocus type="text" name="name" value="{{catData.name}}"></label>
     <label for="description">Description:
         <textarea name="description" cols="30" rows="3">{{catData.description}}</textarea>
     </label>

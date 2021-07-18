@@ -1,18 +1,19 @@
 <section id="userDetails">
-    <div class="profile"><img src="../static/profile.png" alt="default user" width="200" height="200">
+    <div class="profile"><img src="{{#if userData.userImg}}{{userData.userImg}}{{else}}../static/profile.png{{/if}}"
+            alt="User Image" width="200" height="200">
         <h3>User Info:</h3>
         <div class="flex">
             <p>Username: </p>
-            <p>{{userData.username}}</p>
+            <p style="font-weight: 900;">{{userData.username}}</p>
         </div>
         <div class="flex">
             <p>Email: </p>
-            <p>{{userData.email}}</p>
+            <p style="font-weight: 900;">{{userData.email}}</p>
         </div>
         <div class="flex">
             <p>Given cats: </p>
             <p>
-                {{#each givenCats}}
+                {{#each userData.givenCats}}
                 {{> givenCat}}
                 {{/each}}
             </p>
