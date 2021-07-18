@@ -17,7 +17,7 @@ router.post('/create', isUser(), async (req, res) => {
         }
 
         const cat = await req.storage.createCat(catData, req.user._id);
-        
+
         res.redirect('/');
     } catch (err) {
         let errors;
@@ -36,7 +36,7 @@ router.post('/create', isUser(), async (req, res) => {
             }
         }
 
-        res.render('cat/create', ctx);
+        res.status(400).render('cat/create', ctx);
     }
 });
 
@@ -49,7 +49,7 @@ router.get('/details/:id', async (req, res) => {
         res.render('cat/details', { cat });
     } catch (err) {
         console.log(err.message);
-        res.render('404');
+        res.status(404).render('404');
     }
 
 });
@@ -61,7 +61,7 @@ router.post('/edit/:id', isUser(), async (req, res) => {
         if (req.user._id != cat.author) {
             throw new Error('You cannot edit cat information.')
         }
-        console.log(req.body);
+        
         await req.storage.editCat(req.params.id, req.body);
 
         res.redirect('/');
@@ -85,7 +85,7 @@ router.post('/edit/:id', isUser(), async (req, res) => {
             }
         }
 
-        res.render('cat/edit', ctx);
+        res.status(400).render('cat/edit', ctx);
     }
 });
 
@@ -101,7 +101,7 @@ router.get('/edit/:id', isUser(), async (req, res) => {
 
     } catch (err) {
         console.log(err.message);
-        res.redirect('/cat/details/' + req.params.id);
+        res.status(400).redirect('/cat/details/' + req.params.id);
     }
 });
 
@@ -117,7 +117,7 @@ router.get('/delete/:id', isUser(), async (req, res) => {
         res.redirect('/');
     } catch (err) {
         console.log(err.message);
-        res.redirect('/cat/details/' + req.params.id);
+        res.status(400).redirect('/cat/details/' + req.params.id);
     }
 });
 

@@ -43,7 +43,7 @@ router.post(
                     userImg: req.body.userImg
                 }
             }
-            res.render('auth/register', ctx);
+            res.status(400).render('auth/register', ctx);
         }
     });
 
@@ -69,7 +69,7 @@ router.post('/login', isGuest(), async (req, res) => {
                 username: req.body.username
             }
         };
-        res.render('auth/login', ctx)
+        res.status(400).render('auth/login', ctx)
     }
 });
 
