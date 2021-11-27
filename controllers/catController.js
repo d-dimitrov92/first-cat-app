@@ -9,11 +9,14 @@ router.get('/create', isUser(), async (req, res) => {
 
 router.post('/create', isUser(), async (req, res) => {
     try {
+        const dateCreated = new Date(Date.now())
+        console.log(dateCreated)
         const catData = {
             name: req.body.name,
             description: req.body.description,
             imageUrl: req.body.imageUrl,
-            author: req.user._id
+            author: req.user._id,
+            createdAt: dateCreated
         }
 
         const cat = await req.storage.createCat(catData, req.user._id);

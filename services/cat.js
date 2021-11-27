@@ -3,7 +3,7 @@ const User = require('../models/User');
 
 async function getAllCats(query) {
     const options = {};
-    const pageOptions = {}
+    const pageOptions = {};
     const cats = {};
 
     // add name property to options object if we have search in query
