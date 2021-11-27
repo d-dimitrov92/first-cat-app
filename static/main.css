@@ -15,12 +15,19 @@ nav {
 
 body {
     margin: 0;
-    margin-bottom: 52px;
+}
+
+main {
+    margin-bottom: 72px;
+}
+
+section {
+    margin: 0;
+    margin-bottom: 10vh;
 }
 
 .profile-btn {
     border: none;
-    
 }
 
 nav {
@@ -235,6 +242,7 @@ footer {
     bottom: 0;
     margin-left: 0;
     margin-right: 0;
+    margin-top: 20px;
     width: 100vw;
     background-color: lightgray;
     padding: 12px;

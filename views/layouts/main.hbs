@@ -1,44 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/main.css">
-    <link rel="shortcut icon" type="image/png" href="/static/favicon.png">
+  <head>
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link rel='stylesheet' href='/static/main.css' />
+    <link rel='shortcut icon' type='image/png' href='/static/favicon.png' />
     <title>Cats home</title>
-</head>
+  </head>
 
-<body>
-    <nav>
+  <body>
+    <section>
+      <nav>
         {{#if user}}
-        <span>Hello, <a class="profile-btn" href="/profile">{{user.username}}</a>!</span>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a class="special" href="/cat/create">Give Us a cat</a>
-        <a href="/auth/logout">Logout</a>
+          <span>Hello,
+            <a class='profile-btn' href='/profile'>{{user.username}}</a>!</span>
+          <a href='/'>Home</a>
+          <a href='/about'>About</a>
+          <a class='special' href='/cat/create'>Give Us a cat</a>
+          <a href='/auth/logout'>Logout</a>
         {{else}}
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/auth/login">Login</a>
-        <a href="/auth/register">Register</a>
+          <a href='/'>Home</a>
+          <a href='/about'>About</a>
+          <a href='/auth/login'>Login</a>
+          <a href='/auth/register'>Register</a>
         {{/if}}
-    </nav>
+      </nav>
 
-    <main>
+      <main>
         {{#if errors}}
-        <section class="error notifications">
+          <section class='error notifications'>
             {{#each errors}}
-            <p>{{this}}</p>
+              <p>{{this}}</p>
             {{/each}}
-        </section>
+          </section>
         {{/if}}
         {{{body}}}
-    </main>
+      </main>
 
-</body>
+    </section>
 
-<footer>Cats Ltd. 2021</footer>
+  </body>
+
+  {{!-- <footer>Cats Ltd. 2021</footer> --}}
 
 </html>
