@@ -1,0 +1,18 @@
+.main-card {
+  width: 100%;
+  background-color: rgb(233, 233, 233);
+  padding: 0.5em;
+  border: solid black 2px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 1.5em 2px black;
+}
+
+.main-card:hover {
+  border: rgb(88, 0, 0) solid 2px;
+  box-shadow: 2px 2px 1.5em 2px rgb(88, 0, 0);
+}
+
+.card-img {
+  width: 100%;
+  object-fit: contain;
+}

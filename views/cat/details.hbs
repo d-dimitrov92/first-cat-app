@@ -2,15 +2,15 @@
     <div class="desc-card">
         <section>
             <h1>Cat name: <span class="cat-name">{{cat.name}}</span></h1>
-            <div>
-                <img src="{{cat.imageUrl}}" alt="cat picture here"/>
+            <div class="img-container">
+                <img class="details-img" src="{{cat.imageUrl}}" alt="cat picture here"/>
             </div>
         </section>
 
         <section>
             <h3>Cat Description</h3>
             <p class="description">{{cat.description}}</p>
-            <h5>Date: {{cat.createdAt}}</h5>
+            <h4>Here from: {{hereFrom}} hours</h4>
 
             {{#if cat.isAuthor}}
             <div class="buttons">

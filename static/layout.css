@@ -1,0 +1,23 @@
+.cats-grid {
+  display: grid;
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 40em) {
+  .cats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 60em) {
+  .cats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 80em) {
+  .cats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

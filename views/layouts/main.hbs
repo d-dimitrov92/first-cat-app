@@ -5,43 +5,64 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <link rel='stylesheet' href='/static/main.css' />
+    <link rel='stylesheet' href='/static/layout.css' />
+    <link rel='stylesheet' href='/static/card.css' />
     <link rel='shortcut icon' type='image/png' href='/static/favicon.png' />
     <title>Cats home</title>
   </head>
 
   <body>
-    <section>
-      <nav>
+    {{#if user}}
+      <p class='greeting'><span class='greeting'>Hello,
+          <a
+            class='simple-link'
+            href='/profile'
+          >{{user.username}}</a>!</span></p>
+    {{/if}}
+    <nav class='main-nav'>
+      <ul class='nav-list'>
         {{#if user}}
-          <span>Hello,
-            <a class='profile-btn' href='/profile'>{{user.username}}</a>!</span>
-          <a href='/'>Home</a>
-          <a href='/about'>About</a>
-          <a class='special' href='/cat/create'>Give Us a cat</a>
-          <a href='/auth/logout'>Logout</a>
+
+          <li class='nav-tem'><a class='nav-link' href='/'>Home</a></li>
+          <li class='nav-tem'><a class='nav-link' href='/about'>About</a></li>
+          <li class='nav-tem'><a
+              class='nav-link special-link'
+              href='/cat/create'
+            >Give Us a cat</a></li>
+          <li class='nav-tem'><a
+              class='nav-link'
+              href='/auth/logout'
+            >Logout</a></li>
+
         {{else}}
-          <a href='/'>Home</a>
-          <a href='/about'>About</a>
-          <a href='/auth/login'>Login</a>
-          <a href='/auth/register'>Register</a>
-        {{/if}}
-      </nav>
+          <li class='nav-item'><a class='nav-link' href='/'>Home</a></li>
+          <li class='nav-item'><a class='nav-link' href='/about'>About</a></li>
+          <li class='nav-item'><a
+              class='nav-link'
+              href='/auth/login'
+            >Login</a></li>
+          <li class='nav-item'><a
+              class='nav-link'
+              href='/auth/register'
+            >Register</a></li>
 
-      <main>
-        {{#if errors}}
-          <section class='error notifications'>
-            {{#each errors}}
-              <p>{{this}}</p>
-            {{/each}}
-          </section>
         {{/if}}
-        {{{body}}}
-      </main>
+      </ul>
+    </nav>
 
-    </section>
+    <main class='main-content'>
+      {{#if errors}}
+        <section class='error notifications'>
+          {{#each errors}}
+            <p>{{this}}</p>
+          {{/each}}
+        </section>
+      {{/if}}
+      {{{body}}}
+    </main>
 
   </body>
 
-  {{!-- <footer>Cats Ltd. 2021</footer> --}}
+  {{! <footer>Cats Ltd. 2021</footer> }}
 
 </html>

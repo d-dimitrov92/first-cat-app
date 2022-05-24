@@ -1,82 +1,103 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
+  box-sizing: border-box;
 }
 
 html {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  position: relative;
+  height: 100vh;
+  overflow-x: hidden;
 }
 
-a {
+nav {
+  background-color: lightgray;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  margin-bottom: 72px;
+}
+
+section {
+  margin: 0;
+  margin-bottom: 10vh;
+}
+
+.profile-btn {
+  border: none;
+}
+
+nav {
+  display: block;
+  margin: auto;
+}
+nav a {
   text-decoration: none;
   color: black;
-}
-
-p {
-  font-size: 20px;
-}
-
-.simple-link {
-  text-decoration: underline;
-}
-.simple-link:hover {
-  text-decoration: none;
-}
-
-.nav-list {
-  display: flex;
-  margin: 0 5%;
-  justify-content: space-between;
-  list-style: none;
-}
-
-.nav-link {
-  display: flex;
   background-color: rgb(251, 225, 163);
   border: black solid 2px;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 24px;
   margin: 5px;
-  padding: 0.125em 0.3em;
+  padding: 4px 8px;
+  display: inline-block;
 }
-
-.nav-link:hover {
+nav a:hover {
   color: white;
   background-color: rgb(180, 126, 0);
 }
-.nav-link:active {
+nav a:active {
   color: white;
   background-color: rgb(129, 90, 0);
 }
+nav span {
+  display: block;
+  margin: 0;
+  padding: 4px;
+  font-size: 24px;
+}
 
-.special-link {
+.main-card {
+  background-color: rgb(233, 233, 233);
+  border: black solid 2px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 1.5em 2px black;
+  margin: 12px;
+  padding: 12px;
+}
+.main-card:hover {
+  border: rgb(88, 0, 0) solid 2px;
+  box-shadow: 2px 2px 1.5em 2px rgb(88, 0, 0);
+}
+.name-details {
+  flex: 0 0 10em;
+  position: relative;
+}
+
+.special {
   background-color: rgb(139, 0, 0);
   color: white;
 }
-.special-link:hover {
+.special:hover {
   background-color: rgb(246, 132, 132);
   color: black;
 }
-.special-link:active {
+.special:active {
   background-color: rgb(0, 0, 0);
   color: white;
 }
 
-.greeting {
-  margin: 5px;
-  padding: 4px;
-  font-size: 12px;
-}
-
-.search-form {
-  padding-top: 24px;
+main {
+  display: block;
 }
 
 form input,
 form textarea {
-  font-size: 16px;
+  font-size: 22px;
   text-align: left;
 }
 form.form {
@@ -92,7 +113,7 @@ form.form label {
 form input.submit {
   color: white;
   background-color: darkolivegreen;
-  font-size: 12px;
+  font-size: 24px;
   margin: 5px;
   padding: 4px 8px;
   text-decoration: none;
@@ -106,6 +127,9 @@ form input.submit:hover {
 form input.submit:active {
   background-color: darkolivegreen;
   color: white;
+}
+p {
+  font-size: 20px;
 }
 
 div a {
@@ -126,6 +150,14 @@ div a:hover {
 div a:active {
   color: white;
   background-color: darkolivegreen;
+}
+
+.desc-card {
+  display: inline-block;
+}
+
+h3 {
+  margin: auto;
 }
 
 .description {
@@ -168,16 +200,21 @@ div a:active {
   background-color: darkred;
 }
 
+select {
+  font-size: 24px;
+}
+
 .prev,
 .next,
 .goBtn {
   display: inline-block;
   text-decoration: none;
   margin: 8px;
+  margin-top: 24px;
   padding: 8px;
   border: black 1px solid;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 24px;
   color: white;
   background-color: rgb(65, 24, 0);
 }
@@ -196,16 +233,22 @@ div a:active {
   background-color: rgb(65, 24, 0);
 }
 .page {
-  font-size: 14px;
+  font-size: 24px;
 }
 
-.img-container {
-  display: flex;
-  justify-content: center;
+.flex p {
+  display: inline-block;
 }
 
-.details-img {
-  width: 40%;
+footer {
+  position: fixed;
+  bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 20px;
+  width: 100vw;
+  background-color: lightgray;
+  padding: 12px;
 }
 
 @-webkit-keyframes fadeOut {
@@ -225,81 +268,5 @@ div a:active {
 
   to {
     opacity: 0;
-  }
-}
-
-@media (min-width: 40em) {
-  .main-nav {
-    margin: 0 10%;
-  }
-  .nav-link {
-    font-size: 16px;
-  }
-  .page {
-    font-size: 18px;
-  }
-
-  .search-input {
-    font-size: 18px;
-  }
-
-  .prev,
-  .next,
-  .goBtn,
-  form input.submit {
-    font-size: 16px;
-  }
-}
-
-@media (min-width: 60em) {
-  .main-nav {
-    margin: 0 15%;
-  }
-
-  .nav-link {
-    font-size: 18px;
-  }
-  .greeting {
-    font-size: 18px;
-  }
-  .page {
-    font-size: 20px;
-  }
-  .search-input {
-    font-size: 20px;
-  }
-
-  .prev,
-  .next,
-  .goBtn,
-  form input.submit {
-    font-size: 18px;
-  }
-}
-
-@media (min-width: 80em) {
-  .main-nav {
-    margin: 0 20%;
-  }
-
-  .nav-link {
-    font-size: 24px;
-  }
-  .greeting {
-    font-size: 24px;
-  }
-  .page {
-    font-size: 24px;
-  }
-
-  .search-input {
-    font-size: 24px;
-  }
-
-  .prev,
-  .next,
-  .goBtn,
-  form input.submit {
-    font-size: 24px;
   }
 }
