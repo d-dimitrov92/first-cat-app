@@ -5,21 +5,20 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <link rel='stylesheet' href='/static/main.css' />
-    <link rel='stylesheet' href='/static/layout.css' />
-    <link rel='stylesheet' href='/static/card.css' />
     <link rel='shortcut icon' type='image/png' href='/static/favicon.png' />
     <title>Cats home</title>
   </head>
 
   <body>
-    {{#if user}}
-      <p class='greeting'><span class='greeting'>Hello,
-          <a
-            class='simple-link'
-            href='/profile'
-          >{{user.username}}</a>!</span></p>
-    {{/if}}
+
     <nav class='main-nav'>
+      {{#if user}}
+        <p class='greeting'><span class='greeting'>Hello,
+            <a
+              class='simple-link'
+              href='/profile'
+            >{{user.username}}</a>!</span></p>
+      {{/if}}
       <ul class='nav-list'>
         {{#if user}}
 
