@@ -12,6 +12,7 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
+  padding-bottom: 1.5rem;
 }
 
 a {
