@@ -18,11 +18,11 @@ async function getAllCats(query) {
         pageOptions.page = 1;
     }
 
-    // add limit property to pageOptions object and set default value to 3
+    // add limit property to pageOptions object and set default value to 4
     if (query.limit) {
         pageOptions.limit = parseInt(query.limit);
     } else {
-        pageOptions.limit = 3
+        pageOptions.limit = 4
     }
 
     //index of first rendered cat

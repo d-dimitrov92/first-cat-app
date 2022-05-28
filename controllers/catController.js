@@ -18,7 +18,6 @@ router.post('/create', isUser(), async (req, res) => {
     };
 
     const cat = await req.storage.createCat(catData, req.user._id);
-    console.log(cat);
 
     res.redirect('/');
   } catch (err) {
